@@ -1,0 +1,33 @@
+<div class="container">
+    <h1 class='text-center'>View Post</h1>
+    <div class="create-div mb-10">
+        <a href="#" routerLink="/post/list" class="btn btn-outline-primary">Back</a>
+    </div>
+    <div class="form-control">
+        <div class="row">
+            <div class="col-md-5">
+                <strong>ID:</strong>
+            </div>
+            <div class="col-md-7">
+                <p>{{ post.id }}</p>
+            </div>
+            
+            <div class="col-md-5">
+                <strong>Title:</strong>
+            </div>
+            <div class="col-md-7">
+                <p>{{ post.title }}</p>
+            </div>
+            
+            
+            <div class="col-md-5">
+                <strong>Body:</strong>
+            </div>
+            <div class="col-md-7">
+                <p>{{ post.body }}</p>
+            </div>
+        </div>
+    </div>
+    
+   
+</div>

@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.mb-10{
+    margin-bottom : 10px
+}
+.mt-10{
+    margin-top : 10px
+}
+.create-div{
+    text-align : right;
+}
+.post-action-btn{
+    margin-right: 5px;
+}
+.form-div{
+    background-color: #fefdff;
+}
+.mt-20{
+    margin-top: 20px;
+}

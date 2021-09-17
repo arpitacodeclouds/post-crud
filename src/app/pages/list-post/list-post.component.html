@@ -1,0 +1,38 @@
+<div class="container">
+    <h1 class="text-center">My Blog</h1>
+    <div class="create-div mb-10">
+        <a href="#" routerLink="/post/create" class="btn btn-success">Create New Post</a>
+    </div>
+    <div class="form-group">
+        <input type="email" class="form-control" id="search-post" aria-describedby="search-post" 
+          [(ngModel)]="search_post" placeholder="Search..." 
+          autofocus>
+    </div>
+    <div class="mt-20">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Body</th>
+                <th width="220px">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let post of postList | customFilter: search_post | paginate: { itemsPerPage: pcount, currentPage: curr_page, totalItems: total_items}">
+                <td>{{ post.id }}</td>
+                <td>{{ post.title.length > 50 ? (post.title | slice:0:50) + '...' : post.title }}</td>
+                <td>{{ post.body.length > 50 ? (post.body | slice:0:50) + '...' : post.body}}</td>
+                <td>
+                  <a href="#" [routerLink]="['/post/', post.id, 'view']" class="btn btn-info post-action-btn">View</a>
+                  <a href="#" [routerLink]="['/post/', post.id, 'edit']"  class="btn btn-primary post-action-btn">Edit</a>
+                  <button type="button" (click)="deletePost(post.id)" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="postList" class="create-div">
+        <pagination-controls (pageChange)="curr_page = $event"></pagination-controls>
+    </div>
+    </div>
+ </div>
